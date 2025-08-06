@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socialgame/gamemode.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -13,11 +14,7 @@ class WelcomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Logo or illustration placeholder
-                Icon(
-                  Icons.celebration,
-                  size: 100,
-                  color: Colors.orange[400],
-                ),
+                Icon(Icons.celebration, size: 100, color: Colors.orange[400]),
 
                 SizedBox(height: 20),
 
@@ -34,10 +31,7 @@ class WelcomeScreen extends StatelessWidget {
 
                 Text(
                   'Your favorite group game zone!',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.grey[700],
-                  ),
+                  style: TextStyle(fontSize: 18, color: Colors.grey[700]),
                   textAlign: TextAlign.center,
                 ),
 
@@ -45,7 +39,10 @@ class WelcomeScreen extends StatelessWidget {
 
                 ElevatedButton(
                   onPressed: () {
-                   
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GameModeScreen()),
+                    ); // Navigate to the game screen or next page
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
